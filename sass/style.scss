@@ -1,0 +1,434 @@
+@import 'colors';
+@import 'animation';
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: $bgc-color;
+	color: white;
+}
+
+// nawigacja
+.navbar {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background-color: $bgc-color;
+
+	.navbar-toggler {
+		color: $white;
+
+		span {
+			color: $white;
+		}
+	}
+	.navbar-brand {
+		font-size: 36px;
+		color: $white;
+		span {
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: $p-color;
+			font-weight: bold;
+		}
+		i {
+			font-size: 40px;
+			color: $logo;
+		}
+	}
+
+	.navbar-nav {
+		text-transform: uppercase;
+		font-size: 18px;
+		a {
+			color: $white;
+			transition: color 0.3s;
+		}
+
+		a:hover {
+			color: $p-color;
+		}
+	}
+}
+
+// header
+header {
+	position: relative;
+
+	.header-bg {
+		position: relative;
+		height: calc(100vh - 80px);
+		background-image: url('../img/bg-min.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		z-index: -3;
+
+		.header-shadow {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(37, 33, 33, 0.7);
+			z-index: -4;
+		}
+
+		.header-text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 0 30px;
+			width: 100%;
+			height: 100%;
+			text-shadow: 0 0 15px black;
+			text-align: center;
+			color: $white;
+
+			h1 {
+				text-transform: uppercase;
+				font-size: 70px;
+				font-weight: bold;
+			}
+
+			p {
+				font-size: 36px;
+			}
+		}
+	}
+	i {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		right: 50%;
+		transform: translateX(-50%);
+		padding-bottom: 20px;
+		font-size: 36px;
+		color: $white;
+		z-index: 3;
+	}
+}
+
+// aboutus
+.aboutus {
+	position: relative;
+	min-height: 900px;
+	h2 {
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	h2::before {
+		content: '';
+		position: absolute;
+		// left: 7%;
+		bottom: 1px;
+		width: 90px;
+		height: 14px;
+		transform: skew(-14deg) translateX(-20%);
+		background: $p-color;
+		z-index: -1;
+	}
+
+	.aboutus-achievements {
+		padding-top: 20px;
+		ul {
+			position: relative;
+			padding-top: 10px;
+			list-style-type: none;
+
+			i {
+				padding-right: 10px;
+				font-size: 18px;
+				color: $p-color;
+			}
+		}
+	}
+	.aboutus-text {
+		p {
+			padding-top: 10px;
+		}
+	}
+}
+
+// offert
+.offert {
+	h2 {
+		position: relative;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	h2::before {
+		content: '';
+		position: absolute;
+		// left: 7%;
+		bottom: 1px;
+		width: 160px;
+		height: 14px;
+		transform: skew(-14deg) translateX(-10%);
+		background: $p-color;
+		z-index: -1;
+	}
+
+	.offert-element {
+		padding: 25px;
+		i {
+			font-size: 46px;
+			padding-bottom: 20px;
+			transition: color 0.3s;
+		}
+
+		p {
+			text-transform: uppercase;
+			color: $p-color;
+			font-weight: bold;
+		}
+
+		i:hover {
+			color: $p-color;
+		}
+	}
+}
+
+// places
+
+.places {
+	h2 {
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+	}
+	h2::before {
+		content: '';
+		position: absolute;
+		// left: 7%;
+		bottom: 1px;
+		width: 160px;
+		height: 14px;
+		transform: skew(-14deg) translateX(-10%);
+		background: $p-color;
+		z-index: -1;
+	}
+
+	.places-elements {
+		.element {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px 25px;
+			.element-jpg {
+				position: relative;
+				transition: transform 0.3s, box-shadow 0.3s;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+
+				.element-jpg-shadow {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					transition: background-color 0.3s;
+				}
+			}
+
+			.element-text {
+				padding-top: 20px;
+
+				ul {
+					list-style-type: none;
+
+					p {
+						font-size: 18px;
+						text-transform: uppercase;
+						margin-bottom: 10px;
+						padding-top: 10px;
+					}
+				}
+			}
+
+			.element-jpg:hover {
+				transform: scale(1.05);
+				box-shadow: 0 0 15px $p-color;
+			}
+
+			.element-jpg-shadow:hover {
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+		}
+	}
+}
+
+// contact
+
+.contact {
+	
+	.hero-img {
+		position: relative;
+		background-image: url('../img/tianjin-ge09c794f4_1920.jpg');
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		z-index: 2;
+
+		.contact-shadow {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			background-color: rgba(0, 0, 0, 0.68);
+			z-index: -2;
+		}
+
+		.hero-text {
+			z-index: 3;
+
+			.contact-us-div {
+				padding: 10px;
+				h2 {
+					text-transform: uppercase;
+					position: relative;
+					z-index: 2;
+				}
+				h2::before {
+					content: '';
+					position: absolute;
+					bottom: 1px;
+					width: 120px;
+					height: 14px;
+					transform: skew(-14deg) translateX(-10%);
+					background: $p-color;
+					z-index: -2;
+				}
+
+
+				.contact-us {
+					font-weight: bold;
+					padding-top: 20px;
+					font-size: 20px;
+				}
+
+				i {
+					font-size: 24px;
+					padding-right: 5px;
+				}
+
+			}
+
+			.social-media {
+				text-transform: uppercase;
+				h2 {
+					padding-bottom: 15px;
+				}
+				a {
+					z-index: -2;
+
+					i {
+						color: $white;
+						font-size: 40px;
+						padding: 10px;
+						transition: color .3s;
+					}
+				}
+
+				i:hover{
+					color: $p-color;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 370px) {
+	.navbar {
+		min-height: 80px;
+		.navbar-brand {
+			font-size: 26px;
+		}
+	}
+}
+@media (min-width: 1200px) {
+	header {
+		.header-bg {
+			background-image: url('../img/bg-max.jpg');
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		.header-bg {
+			.header-text {
+				h1 {
+					font-size: 50px;
+				}
+
+				p {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.aboutus {
+		.aboutus-achievements {
+			padding-top: 0px;
+			padding-left: 200px;
+		}
+	}
+
+	.places {
+		.places-elements {
+			.element-three {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.aboutus {
+		.aboutus-gallery {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			right: 50%;
+			transform: translate(-50%, 0);
+			height: 500px;
+			width: 1000px;
+
+			.carousel-item {
+				height: 500px;
+				width: 1000px;
+			}
+		}
+	}
+
+	.places {
+		.places-elements {
+			.element-three {
+				width: calc(100% / 3);
+			}
+		}
+	}
+}
